@@ -1,0 +1,351 @@
+#:kivy 1.0.9
+#:import Window kivy.core.window.Window
+
+<JumpingGame>:
+	button: jumping_button
+	universe: jumping_universe
+	shopbutton: jumping_shopbutton
+	shop: jumping_shop
+	progress : jumping_progress
+	progresbackground : jumping_progressbackground
+	xp : jumping_xp
+	pfeil : jumping_pfeil
+	anzeige : jumping_anzeige
+	showlevel : jumping_showlevel
+	showlevelbackground : jumping_showlevelbackground
+	trampoline : jumping_trampoline
+	guy : jumping_guy
+	buildings : jumping_buildings
+	highscore: jumping_highscore
+	JumpingUniverse:
+		id: jumping_universe
+		center: self.parent.center
+	JumpingBuildings:
+		id: jumping_buildings
+		center: self.parent.center
+	JumpingXp:
+		id: jumping_xp
+		center:self.parent.center
+	JumpingTrampoline:
+		id: jumping_trampoline
+		center: self.parent.center
+	JumpingHighscore:
+		id: jumping_highscore
+		center: self.parent.center
+	JumpingGuy:
+        id: jumping_guy
+		center: self.parent.center
+	JumpingShowlevelbackground:
+		id: jumping_showlevelbackground
+		center: jumping_showlevel.center
+	JumpingShowlevel:
+		id: jumping_showlevel
+		center:self.position
+	JumpingProgressbackground:
+		id: jumping_progressbackground
+		center: self.parent.center
+	JumpingProgress:
+		id: jumping_progress
+		center:self.parent.center
+	JumpingAnzeige:
+		id: jumping_anzeige
+		center: self.parent.center
+	JumpingPfeil:
+		id: jumping_pfeil
+		center:self.parent.center
+	JumpingButton:
+		id: jumping_button
+		center: self.parent.center
+	JumpingShopbutton:
+		id: jumping_shopbutton
+		center: self.parent.center
+	JumpingShop:
+		id: jumping_shop
+		center: self.parent.center
+	
+<JumpingHighscore>
+	color: self.color
+	canvas:
+		Color:
+			rgba: self.color
+		Line:
+			points : self.points
+			width: 3
+	Label:
+		text: self.parent.text
+		pos: self.parent.position[0]+300, self.parent.position[1]-30
+
+<JumpingShopbutton>
+	size: 200,200
+	background_normal: ''
+    background_color: 0, 0, 0, 0
+	on_press: self.open_shop()
+	Image:
+		center: self.parent.center
+		source: self.parent.source
+		size: self.parent.size
+	Image:
+		center: self.parent.center
+		source: self.parent.bild
+		size: 100,100
+
+<JumpingButton>
+	size:Window.size[0]/5,Window.size[0]/5
+	on_press:self.parent.button_on_press()
+	Image:
+		id: red_button
+		size: self.parent.size
+		pos: self.parent.pos
+		source:"button.png"
+		center: self.parent.center
+<JumpingShop>
+	pos: 0,0
+	size:self.v_size
+	cols: 3
+	rows: 4
+	default: "Schloss.png"
+	
+	Button:
+		str_id: "tr1"
+		id: tr1
+		on_press: self.parent.clicked(self.str_id)
+		source: self.parent.default
+		canvas:
+			Rectangle:
+				size: self.size
+				pos: self.pos
+				source: self.source
+	Button:
+		str_id: "tr2"
+		id: tr2
+		on_press: self.parent.clicked(self.str_id)
+		source: self.parent.default
+		canvas:
+			Rectangle:
+				size: self.size
+				pos: self.pos
+				source: self.source
+	Button:
+		str_id: "tr3"
+		id: tr3
+		on_press: self.parent.clicked(self.str_id)
+		source: self.parent.default
+		canvas:
+			Rectangle:
+				size: self.size
+				pos: self.pos
+				source: self.source
+	Button:
+		str_id: "tr4"
+		id: tr4
+		on_press: self.parent.clicked(self.str_id)
+		source: self.parent.default
+		canvas:
+			Rectangle:
+				size: self.size
+				pos: self.pos
+				source: self.source
+	Button:
+		str_id: "tr5"
+		id: tr5
+		on_press: self.parent.clicked(self.str_id)
+		source: self.parent.default
+		canvas:
+			Rectangle:
+				size: self.size
+				pos: self.pos
+				source: self.source
+	Button:
+		str_id: "tr6"
+		id: tr6
+		on_press: self.parent.clicked(self.str_id)
+		source: self.parent.default
+		canvas:
+			Rectangle:
+				size: self.size
+				pos: self.pos
+				source: self.source				
+	Button:
+		str_id: "tr7"
+		id: tr7
+		on_press: self.parent.clicked(self.str_id)
+		source: self.parent.default
+		canvas:
+			Rectangle:
+				size: self.size
+				pos: self.pos
+				source: self.source
+	Button:
+		str_id: "tr8"
+		id: tr8
+		on_press: self.parent.clicked(self.str_id)
+		source: self.parent.default
+		canvas:
+			Rectangle:
+				size: self.size
+				pos: self.pos
+				source: self.source
+	Button:
+		str_id: "tr9"
+		id: tr9
+		on_press: self.parent.clicked(self.str_id)
+		source: self.parent.default
+		canvas:
+			Rectangle:
+				size: self.size
+				pos: self.pos
+				source: self.source				
+	Button:
+		str_id: "tr10"
+		id: tr10
+		on_press: self.parent.clicked(self.str_id)
+		source: self.parent.default
+		canvas:
+			Rectangle:
+				size: self.size
+				pos: self.pos
+				source: self.source				
+	Button:
+		str_id: "tr11"
+		id: tr11
+		on_press: self.parent.clicked(self.str_id)
+		source: self.parent.default
+		canvas:
+			Rectangle:
+				size: self.size
+				pos: self.pos
+				source: self.source				
+	Button:
+		str_id: "tr12"
+		id: tr12
+		on_press: self.parent.clicked(self.str_id)
+		source: self.parent.default
+		canvas:
+			Rectangle:
+				size: self.size
+				pos: self.pos
+				source: self.source
+				
+<JumpingUniverse>
+	size: self.parent.size
+	canvas:
+		Rectangle:
+			pos:0,0
+			size:self.size
+			source:"universe.jpg"
+
+
+<JumpingProgressbackground>
+	canvas:
+		Color:
+			rgba: 0,0,0,1
+		Line:
+			points: 65,70,135,70
+			width:Window.size[0]/100
+<JumpingProgress>	
+	canvas:
+		Color:
+			rgba:0,1,0,1
+		Line:
+			points: self.points
+			width:Window.size[0]/100
+<JumpingPfeil>
+	size: 40,40
+	canvas:
+		Rectangle:
+			pos:self.pos
+			size:self.size
+			source:"Pfeil.png"
+<JumpingAnzeige>
+	size:200,60
+	canvas:
+		Color:
+			rgba:1,1,1,1
+		Rectangle:
+			pos: self.pos
+			size:self.size
+			source:"Anzeige.png"
+<JumpingShowlevel>
+	text: self.atext
+	rgba: self.color
+	font_size: 20
+<JumpingShowlevelbackground>
+	canvas:
+		Color:
+			rgba: 1,0,0,1
+		Rectangle:
+			size: self.size
+			pos: self.center[0]-self.size[0]/2, self.center[1]-self.size[1]/2
+<JumpingGuy>:
+    size: 100, 150 
+    canvas:
+        Rectangle:
+            pos: self.pos
+            size: self.size
+			source: self.bild
+<JumpingTrampoline>
+	size: 300, 200
+	canvas:
+		Rectangle:
+			pos: self.pos
+			size: self.size
+			source: self.source
+<JumpingBuildings>
+	size: Window.size[0],75000
+	canvas:
+		Rectangle:
+			pos:self.pos
+			size:self.size
+			source:"Gebaeude2.png"
+<JumpingXp>:
+	pos: self.position
+	Image:
+		id: x2157
+		size_hint: None, None
+		size: self.parent.groesse
+		source:self.parent.v_bild
+		pos: self.parent.pos[0],self.parent.pos[1]+2157
+	Image:
+		id: x3500
+		size_hint: None, None
+		size: self.parent.groesse
+		source:self.parent.v_bild
+		pos: self.parent.pos[0],self.parent.pos[1]+3500
+	Image:
+		id: x5477
+		size_hint: None, None
+		size: self.parent.groesse
+		source:self.parent.v_bild
+		pos: self.parent.pos[0],self.parent.pos[1]+5477
+	Image:
+		id: x7317
+		size_hint: None, None
+		size: self.parent.groesse
+		source:self.parent.v_bild
+		pos: self.parent.pos[0],self.parent.pos[1]+7317
+	Image:
+		id: x10157
+		size_hint: None, None
+		size: self.parent.groesse
+		source:self.parent.v_bild
+		pos: self.parent.pos[0],self.parent.pos[1]+10157
+	Image:
+		id: x15000
+		size_hint: None, None
+		size: self.parent.groesse
+		source:self.parent.v_bild
+		pos: self.parent.pos[0],self.parent.pos[1]+15000
+	Image:
+		id: x20077
+		size_hint: None, None
+		size: self.parent.groesse
+		source:self.parent.v_bild
+		pos: self.parent.pos[0],self.parent.pos[1]+20077
+	Image:
+		id: x25017
+		size_hint: None, None
+		size: self.parent.groesse
+		source:self.parent.v_bild
+		pos: self.parent.pos[0],self.parent.pos[1]+25017
+		
+		
